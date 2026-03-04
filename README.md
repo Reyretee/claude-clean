@@ -57,7 +57,3 @@ Claude will:
 - Test files (asked before touching)
 
 ---
-
-## License
-
-MIT
