@@ -2,18 +2,34 @@
 
 > Claude Code skills for production-ready code cleanup.
 
-## Installation
-
-```bash
-npx skills add Reyretee/claude-clean --skill production-clean
-```
-
 ## Available Skills
 
-| Skill | Description | Install |
-|---|---|---|
-| `production-clean-js` | Cleans JS/TS (React, Next.js) projects | `npx skills add Reyretee/claude-clean --skill production-clean-js` |
-| `production-clean-python` | Cleans Python/Django projects | `npx skills add Reyretee/claude-clean --skill production-clean-python` |
+| Skill | Description |
+|---|---|
+| `production-clean-js` | Cleans JS/TS (React, Next.js) projects |
+| `production-clean-python` | Cleans Python/Django projects |
+
+> There is no combined `production-clean` skill. Install the one that matches your stack, or install both.
+
+---
+
+## Installation
+
+**JavaScript / TypeScript (React, Next.js):**
+```bash
+npx skills add Reyretee/claude-clean --skill production-clean-js
+```
+
+**Python / Django:**
+```bash
+npx skills add Reyretee/claude-clean --skill production-clean-python
+```
+
+**Both:**
+```bash
+npx skills add Reyretee/claude-clean --skill production-clean-js
+npx skills add Reyretee/claude-clean --skill production-clean-python
+```
 
 ---
 
@@ -22,7 +38,11 @@ npx skills add Reyretee/claude-clean --skill production-clean
 After installation, open Claude Code in your project and run:
 
 ```
-/production-clean
+/production-clean-js
+```
+or
+```
+/production-clean-python
 ```
 
 Claude will:
@@ -35,25 +55,24 @@ Claude will:
 
 ## What Gets Cleaned
 
-**JavaScript / TypeScript (React, Next.js):**
+**`production-clean-js` — JavaScript / TypeScript:**
 - `console.log`, `console.debug`, `debugger` statements
 - Unused imports
 - Unused variables and destructured values
 - Commented-out code and meaningless comments
 
-**Python / Django:**
+**`production-clean-python` — Python / Django:**
 - `print()`, `pprint()`, `breakpoint()`, `pdb.set_trace()`
 - Unused imports
 - Unused variables
 - Commented-out code blocks
 
+---
+
 ## What Never Gets Touched
 
-- `settings.py` and `migrations/` in Django projects
-- `index.ts` / `index.js` re-exports (public API)
-- JSDoc / TSDoc documentation comments
-- Next.js config and special files (`layout.tsx`, `page.tsx`)
-- Django signal handlers and `@admin.register` decorators
-- Test files (asked before touching)
+**JS/TS:** `console.error/warn`, JSDoc comments, `index.ts` re-exports, `.d.ts` files, config files, Next.js special files
+
+**Python/Django:** `settings.py`, `migrations/`, `@receiver` signal handlers, `@admin.register` decorators, `__init__.py` public imports, `urls.py` lazy imports
 
 ---
