@@ -12,7 +12,8 @@ npx skills add Reyretee/claude-clean --skill production-clean
 
 | Skill | Description | Install |
 |---|---|---|
-| `production-clean` | Removes debug statements, unused imports, variables and comments. Supports JS/TS and Python/Django. | `npx skills add Reyretee/claude-clean --skill production-clean` |
+| `production-clean-js` | Cleans JS/TS (React, Next.js) projects | `npx skills add Reyretee/claude-clean --skill production-clean-js` |
+| `production-clean-python` | Cleans Python/Django projects | `npx skills add Reyretee/claude-clean --skill production-clean-python` |
 
 ---
 
